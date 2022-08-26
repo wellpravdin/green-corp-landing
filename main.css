@@ -8,9 +8,12 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 button {
-    font-family: 'Raleway', sans—serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 15px;
     color: #fff;
     background-color: #23a030;
@@ -110,13 +113,12 @@ header a {
     display: flex;
     flex-direction: column;
     text-align: left;
-    grid-gap: 20px;
 }
 
 .form form {
-    
     display: grid;
     margin-top: 60px;
+    grid-gap: 20px;
 }
 
 .form label {
@@ -186,4 +188,79 @@ footer {
 
 .footer__links a {
     padding-bottom: 15px;
+}
+
+@keyframes rotation {
+    0%{
+        transform: rotate(0deg);
+      }
+    
+    100%{
+        transform: rotate(360deg);
+      }
+}
+
+.about__sun-image {
+    animation: rotation 10s infinite linear;
+    position: absolute;
+
+}
+@media (max-width:  1024px) {
+    header section footer {
+        padding: 0 20px;
+    }
+    section {
+        padding: 50px 0;
+    }
+    section>h1 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+    .about__info>h1 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+    .about__sun-image {
+        width: 75px;
+        height: 75px;
+    }
+    .about__image {
+        width: 280px;
+    }
+
+}
+
+@media (max-width: 750px) {
+    .footer__container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .about {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 20px;
+    }
+
+    header section footer {
+        padding: 0 10px;
+    }
+    .header__logo {
+        height: 20px;
+    }
+    section {
+        padding: 50px 20px;
+    }
+    h1 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+    .about__sun-image {
+        width: 75px;
+        height: 75px;
+    }
+    .about__image {
+        width: 280px;
+    }
 }
